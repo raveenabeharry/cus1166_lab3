@@ -14,11 +14,7 @@ class Course(db.model):
     # Specify any relationship fields.
     registered_students= db.relationship("Registered Students", backref="courses", lazy=True)
 
-    # specify any utility methods associated with the model.
-    def add_student(self,name, ):
-        new_passenger = RegisteredStudent(name=name, seat=seat, flight_id=self.id )
-        db.session.add(new_student)
-        db.session.commit()
+
 
 class RegisteredStudent(db.Model):
     __tablename__ = "registered_students"
@@ -28,3 +24,9 @@ class RegisteredStudent(db.Model):
 
     # Notice, this field serves as a foreighKey.
     course_number = db.Column(db.Integer, db.ForeignKey('course_number.id'), nullable=False)
+
+    # specify any utility methods associated with the model.
+    def add_student(self,name, grade ):
+        new_passenger = RegisteredStudent(name=name, grade=grade)
+        db.session.add(new_student)
+        db.session.commit()
