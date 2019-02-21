@@ -1,8 +1,11 @@
 {% extends 'layout.html' %}
 
 {% block body %}
+
+return redirect("/register_student/<int:course_id>")
 <form action="{{ url_for('new course') }}" method="post">
 <input type="text" course_title="Course Title" placeholder="Enter the course title">
 <button type="Submit"> Submit</button>
 </form>
+return redirect("/add_course")
 {% endblock %}
