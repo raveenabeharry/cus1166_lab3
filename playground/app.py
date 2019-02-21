@@ -15,7 +15,7 @@ db.init_app(app)
 
 def main():
     db.create_all()
-    
+
 # Define a route
 @app.route('/')
     courses= db.execute("SELECT * from Course")

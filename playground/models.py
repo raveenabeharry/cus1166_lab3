@@ -27,6 +27,6 @@ class RegisteredStudent(db.Model):
 
     # specify any utility methods associated with the model.
     def add_student(self,name, grade ):
-        new_passenger = RegisteredStudent(name=name, grade=grade)
+        new_register_student = RegisteredStudent(name=name, grade=grade)
         db.session.add(new_student)
         db.session.commit()
