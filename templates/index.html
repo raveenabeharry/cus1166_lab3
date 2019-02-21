@@ -2,7 +2,7 @@
 
 {% block body %}
 
-return redirect("/register_student/<int:course_id>")
+<a href ={{url_for('register_student/<int:course_id>', registered_students=registered_students)}}
 <form action="{{ url_for('new course') }}" method="post">
 <input type="text" course_title="Course Title" placeholder="Enter the course title">
 <button type="Submit"> Submit</button>
