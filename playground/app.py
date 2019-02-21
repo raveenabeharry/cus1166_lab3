@@ -14,9 +14,19 @@ app.config.from_object(Config)
 db.init_app(app)
 
 # Define a route
-@app.route("/")
+@app.route('/')
+    courses= Course.query.all()
+    return render_template('index.html', courses=courses)
 
+# Define a route
+@app.route('/add_course', methods = ["POST"])
+    if request.method == 'POST':
+        course_title = request.form.get("course_number")
+        course_number = request.form.get("course_title")
+        course_number = request.form.get("course_number")
+        course_title = request.form.get("course_title")
+        registered_students = courses.registered_students
+    return render_template("index.html", courses=courses, registered_students=registered_students)
 
-
-courses= Course.query.all()
-return render_template('index.html', courses=courses)
+# Define a route
+@app.route('/register_student', methods = ["GET","POST"])
