@@ -2,4 +2,13 @@
 
 {% block body %}
 
+ <h1>Here are the updated Courses <li>{{courses}}</li> and Student Roster: <li>{{registered_students}}</li></h1>
+
+ <form action="{{ url_for('Course Registration Link ') }}" method="post">
+   <input type="text" name= "Student's Name" placeholder="Please enter your name: ">
+   <input type="text" grade = "Student's Grade" placeholder="Please enter your grade">
+   <input type="text" course_title="Course Title" placeholder="Please enter the course title">
+   <input type="text" course_number="Course Number" placeholder="Please enter the course number">
+   <a href ={{url_for('register_student/<int:course_id>', registered_students=registered_students)}}
+
 {% endblock %}
