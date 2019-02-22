@@ -18,20 +18,27 @@ def main():
 
 # Define a route
 @app.route('/')
+def welcome():
     courses= db.execute("SELECT * from Course")
     return render_template('index.html', courses=courses)
 
 # Define a route
 @app.route('/add_course', methods = ["POST"])
-def add_course:
+def add_course():
     if request.method == 'POST':
         course_title = request.form.get("course_number")
         course_number = request.form.get("course_title")
-        course_number = request.form.get("course_number")
-        course_title = request.form.get("course_title")
         registered_students = courses.registered_students
+        db.session.add(courses)
     return render_template("index.html", courses=courses, registered_students=registered_students)
 
 # Define a route
 @app.route('/register_student', methods = ["GET","POST"])
-    d = courses.getcourses
+def register_students():
+    courses= Course.query.get(course_id)
+    registered_students= RegisteredStudent.query.get(id)
+        if request.method == 'POST':
+            name = request.form.get("name")
+            grade = request.form.get("grade")
+            db.session.add(register_students)
+    return render_template("course_details.html", courses=courses, registered_students)
